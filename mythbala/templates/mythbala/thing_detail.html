@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+	{{ thing.thing_name }} Details - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+	<h2> {{ thing.thing_name }} Details </h2>
+	<p>This instance of {{ thing.thing_name }} belongs to Week {{ thing.parent_week }}. </p>
+
+	{% if availability %}
+	<p> To buy, you need {{ thing.thing_cost }} seconds in your wallet. </p>
+	<!-- add code to buy --> 
+	{% else %}
+	<p> You've already purchased this thing! </p>
+	{% endif %}
+{% endblock content %}
