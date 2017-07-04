@@ -8,6 +8,9 @@
 	<h2> {{ thing.thing_name }} Details </h2>
 	<p>This instance of {{ thing.thing_name }} belongs to Week {{ thing.parent_week }}. </p>
 
+	<!-- {% load static %}
+	<img src="{% static "mythbala/{{ thing.image_name }}.jpg" %}" alt = {{ thing.image_name }} /> -->
+
 	{% if availability %}
 	<p> To buy, you need {{ thing.thing_cost }} seconds in your wallet. </p>
 	<!-- add code to buy --> 

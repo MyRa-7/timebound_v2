@@ -21,7 +21,8 @@ from django.contrib.auth.views import (
   		password_reset_confirm,
    		password_reset_complete
 	)
-
+from django.conf import settings
+from django.conf.urls.static import static
 from mythbala import views
 
 app_name = 'mythbala'
@@ -59,4 +60,4 @@ urlpatterns = [
 
 	url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

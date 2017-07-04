@@ -13,8 +13,7 @@ class Profile(models.Model):
 
 @python_2_unicode_compatible
 class Week(models.Model):
-	#week_id = models.IntegerField(primary_key=True, default=0)
-	week_number = models.IntegerField(primary_key=True,default=0)
+	week_number = models.IntegerField(default=0)
 	parent_profile = models.ManyToManyField("Profile")
 
 	def __str__(self):
@@ -23,12 +22,12 @@ class Week(models.Model):
 @python_2_unicode_compatible
 class Thing(models.Model):
 	parent_week = models.ManyToManyField ("Week")
-	#thing_id = models.IntegerField(primary_key=True, default=0)
 	#models.OneToOneField(Week,on_delete=models.CASCADE,primary_key=False,)
-	thing_name = models.CharField(primary_key=True,max_length=25)
+	thing_name = models.CharField(max_length=25)
 	thing_cost = models.IntegerField(default=0)
 	#number_available = models.IntegerField(default=0)
 	availability = models.BooleanField(default=True)
+	photo = models.ImageField(upload_to='mythbala/', null=True)
 
 	def __str__(self):
 		return self.thing_name

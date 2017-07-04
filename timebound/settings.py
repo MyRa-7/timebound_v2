@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -120,6 +121,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+#     '/var/www/static',
+# ]
+#STATIC_ROOT = "/var/www/example.com/static"
 ACCOUNT_ACTIVATION_DAYS = 7
 LOGIN_REDIRECT_URL = "index"
 
@@ -129,3 +135,7 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 EMAIL_PORT = 1025
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '~/Desktop/Explorations/Programming/Django/timebound/mythbala/media'
+#MEDIA_ROOT = '/home/Desktop/Explorations/Programming/Django/timebound/mythbala/media'
