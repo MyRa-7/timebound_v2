@@ -12,6 +12,7 @@ from .models import Week, Thing, Profile
 # 		(None,	{'fields': ['name']}),
 # 	]
 # 	inlines = [WeekInline]
+#	changing a bit to ensure another commit
 		
 admin.site.register(Profile)
 admin.site.register(Week)
